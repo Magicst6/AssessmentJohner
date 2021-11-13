@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 namespace LogicalPrograms
 {
     public class Program
@@ -7,7 +7,16 @@ namespace LogicalPrograms
         {
             int firstNumber = 0, SecondNumber = 1, nextNumber, numberOfElements;
             Console.Write("Geben Sie die Anzahl an Elementen ein : ");
-            numberOfElements = int.Parse(Console.ReadLine());
+            try
+            {
+                numberOfElements = int.Parse(Console.ReadLine());
+            }
+            catch
+            {
+                Console.Write("Geben Sie eine Zahl ein!" +  Environment.NewLine );
+                Main();
+                numberOfElements = 0;
+            }
             if (numberOfElements < 2)
             {
                 Console.Write("Bitte geben Sie eine Zahl größer als 2 an!");
